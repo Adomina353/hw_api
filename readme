@@ -10,7 +10,7 @@
 2.4 удалить пост (например, удалить твит второй: localhost:5000/twit/1
 в постман выбираем delete, вместо звездочки localhost:5000/twit/* номер root (id) указываем и удаляем)
 URL: http://localhost:5000/twit
-HTTP-методы используются: GET, POST
+HTTP-методы используются: GET, POST, DELEATE, PUT
 Тело запроса:
 @app.route('/twit', methods=['POST'])
 def create_twit():
