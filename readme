@@ -1,0 +1,21 @@
+Для запуска: python main.py
+1. Сущности:
+1.1 Пользователь
+1.2 Пост (твит)
+2.Пользователь имеет возможность:
+2.1 создать
+2.2 прочитать
+2.3 изменить твит (например, первый: http://localhost:5000/twit/0)
+2.4 удалить пост (например, второй: localhost:5000/twit/1)
+URL: http://localhost:5000/twit
+HTTP-методы используются: GET, POST
+Тело запроса:
+@app.route('/twit', methods=['POST'])
+def create_twit():
+    '''{"body": "Hello", "author": "1@mail.ru"}'''
+    twit_json=request.get_json()
+    username=twit_json['author']
+    author=User(username)
+    twit=Twit(twit_json['body'], author)
+    twits.append(twit)
+    return jsonify({'status':'ok'})
